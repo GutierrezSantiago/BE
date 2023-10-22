@@ -27,11 +27,11 @@ public class Film {
     @Column(name="release_year")
     private String releaseYear;
 
-    @Column(name="language_id")
-    private short languageId;
+    @Column(name="language_id", nullable = true)
+    private Short languageId;
 
     @Column(name="original_language_id")
-    private short originalLanguageId;
+    private Short originalLanguageId;
 
     @Column(name="rental_duration")
     private short rentalDuration;
@@ -51,6 +51,6 @@ public class Film {
     @Column(name="special_features")
     private String specialFeatures;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "film", fetch = FetchType.LAZY)
     private List<Inventory> inventories;
 }

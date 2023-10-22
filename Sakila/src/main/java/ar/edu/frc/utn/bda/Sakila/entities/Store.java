@@ -20,14 +20,14 @@ public class Store {
     @Column(name="manager_staff_id")
     private short managerStaffId;
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY)
     private List<Customer> customers;
 
     @ManyToOne
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY)
     private List<Inventory> inventories;
 
 }
