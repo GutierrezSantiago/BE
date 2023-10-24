@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="repositorioBean" class="ar.edu.utn.frc.bso.RepositorioAlumnosImpl" />
+
+    <bean id="servicioAlumnos" class="ar.edu.utn.frc.bso.ServicioAlumnosImpl">
+        <constructor-arg name="repositorio" ref="repositorioBean" />
+        <constructor-arg name="notaMinima" value="6"/>
+    </bean>
+
+
+</beans>
